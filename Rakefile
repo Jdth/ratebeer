@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Newapp::Application.load_tasks
+Ratebeer::Application.load_tasks
