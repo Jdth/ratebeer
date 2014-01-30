@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @user.username%></h2>
-
-<p>Has made <%= pluralize(@user.ratings.count, 'rating') %>, average <%= @user.average_rating %> </p>
+<% if @user.ratings.empty?%>
+	Has not rated beers.
+<% else%>
+	<p>Has made <%= pluralize(@user.ratings.count, 'rating') %>,
+ 	average <%= @user.average_rating %> </p>
+<% end %>
 
 <h3>ratings</h3>
 <ul>
