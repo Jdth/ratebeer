@@ -11,11 +11,18 @@
 		<%= link_to 'breweries', breweries_path %>
 		<%= link_to 'beers', beers_path %>
 		<%= link_to 'ratings', ratings_path %>
-  </div>
-
-	<% if not session[:user_id].nil? %>
-		<p><%= User.find(session[:user_id]).username %> signed in</p>
-	<% end %>
+		<%=	link_to 'users', users_path %> |	
+		
+		<% if current_user.nil? %>
+			<%= link_to 'signin', signin_path %>
+			<%= link_to 'signup', signup_path %>
+		<% else %>
+			<%= link_to current_user.username, user_path(current_user.id) %>
+			<%= link_to 'rate a beer', new_rating_path %>
+			<%= link_to 'signout', signout_path, method: :delete %>
+		<% end %>
+	
+	</div>
 
 	<%= yield %>
 
