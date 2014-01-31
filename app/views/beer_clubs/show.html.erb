@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @beer_club.name %></h1>
+Founded <%= @beer_club.founded %>
+<br>
+<%= @beer_club.city %>
+
+<h2>Members</h2>
+<% if @beer_club.users.empty? %>
+	Beer club has no members.
+<% else %>
+	<ul>
+  		<% @beer_club.users.each do |user| %>
+				<li> <%= link_to user.username, user %> </li>
+			<% end %>
+	</ul>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_beer_club_path(@beer_club) %>
