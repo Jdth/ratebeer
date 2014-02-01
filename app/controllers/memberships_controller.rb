@@ -15,7 +15,7 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
-		@beer_clubs = BeerClub.all
+		@beer_clubs = beer_clubs_without_current_user_as_member
   end
 
   # GET /memberships/1/edit
@@ -25,12 +25,12 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
-    @membership = Membership.new(membership_params)
+    @membership = Membership.new(membership_params.merge({ user: current_user }))
 		if @membership.save
 			current_user.memberships << @membership
 			redirect_to user_path current_user
 		else
-			@beer_clubs = BeerClub.all
+			@beer_clubs = beer_clubs_without_current_user_as_member
 			render :new
 		end
   end
@@ -67,6 +67,11 @@ class MembershipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def membership_params
-      params.require(:membership).permit(:user_id, :beer_club_id)
+      params.require(:membership).permit(:beer_club_id)
     end
+
+		def beer_clubs_without_current_user_as_member
+			BeerClub.all.select {|bc| !bc.users.include?(current_user)}
+
+		end
 end
