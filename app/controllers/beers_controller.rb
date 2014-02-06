@@ -1,5 +1,6 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
+	before_action :set_breweries_and_styles_for_template, only: [:new, :edit]
 
   # GET /beers
   # GET /beers.json
@@ -15,15 +16,12 @@ class BeersController < ApplicationController
   # GET /beers/new
   def new
     @beer = Beer.new
-		@breweries = Brewery.all
-		@styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
   end
 
   # GET /beers/1/edit
   def edit
-		@breweries = Brewery.all
-		@styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
-  end
+  
+	end
 
   # POST /beers
   # POST /beers.json
@@ -35,8 +33,7 @@ class BeersController < ApplicationController
         format.html { redirect_to beers_path, notice: 'Beer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @beer }
       else
-				@styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
-				@breweries = Brewery.all
+				set_breweries_and_styles_for_template
         format.html { render action: 'new' }
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
@@ -72,6 +69,11 @@ class BeersController < ApplicationController
     def set_beer
       @beer = Beer.find(params[:id])
     end
+
+		def set_breweries_and_styles_for_template
+			@breweries = Brewery.all
+			@styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+		end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
