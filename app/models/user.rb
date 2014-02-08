@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
 	validates :password, format: { with: /[0-9]/,
 		message: "must include at least one number" }
 
+	def favorite_beer
+		return nil if ratings.empty?
+		ratings.order(score: :desc).limit(1).first.beer
+	end
 end

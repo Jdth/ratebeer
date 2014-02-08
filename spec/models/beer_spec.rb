@@ -18,4 +18,5 @@ describe Beer do
 		expect(beer).not_to be_valid
 		expect(Beer.count).to eq(0)
 	end
+
 end
