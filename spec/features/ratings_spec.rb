@@ -24,4 +24,15 @@ describe "Rating" do
 		expect(beer1.ratings.count).to eq(1)
 		expect(beer1.average_rating).to eq(15.0)
 	end
+
+	it "when deleted, is destroyed" do
+		rating = FactoryGirl.create(:rating, beer:beer1, user:user)
+		
+		visit user_path(user)
+		
+		expect{
+			click_link "delete"
+		}.to change{Rating.count}.from(1).to(0)
+	end
+
 end
