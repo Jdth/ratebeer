@@ -7,7 +7,7 @@ script:
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
 deploy:
-	provider: heroku
+  provider: heroku
   api_key:
     secure: rIWQSBjZZviKQbTHzj+vIUghXOZ8YA/CFot6PbjaDMoyVw30/9rEgWu6RXl5Fofc6nFMQ5pc49SOV+veCYQ8jb0FE/e6BKxb9OwFugpGsECxTNQNyvorFmQZ2Z9/3eQ1iDFSKzPKC9XOoa/B5ylwsyGe52DpDT9GFZpICSwdf5U=
-	run: "rake db:migrate"
+  run: "rake db:migrate"
