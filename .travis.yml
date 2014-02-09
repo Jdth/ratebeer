@@ -9,8 +9,8 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: rIWQSBjZZviKQbTHzj+vIUghXOZ8YA/CFot6PbjaDMoyVw30/9rEgWu6RXl5Fofc6nFMQ5pc49SOV+veCYQ8jb0FE/e6BKxb9OwFugpGsECxTNQNyvorFmQZ2Z9/3eQ1iDFSKzPKC9XOoa/B5ylwsyGe52DpDT9GFZpICSwdf5U=
+    secure: Lag/x9dpv0P5roS8pRLpbNk/+2vwqGQWc56TNehvO2v9lWecvodSrRBazCel5Hxc+Zx16HyDkqys3gPNIEC/hSrQCEvO2++FkuB4gnZn2+lP+HSeS/HPY0UrR06n3WQ9THieclFHBNmIAH4SOZEjFF462C2kTjyaiecZiVqOZhQ=
+  run: "rake db:migrate"
   app: sleepy-spire-3028
   on:
     repo: Jdth/ratebeer
-  run: "rake db:migrate"
