@@ -10,14 +10,19 @@
 <% end %>
 
 <% if @user.beer_clubs.empty? %>
-  User is not a member in any beer club.
+  Is not a member in any beer club.
 <% else %>
   Member of
     <% @user.beer_clubs.each do |beerclub| %>
         <%= link_to beerclub.name, beerclub %>
     <% end %>
 <% end %>
-
+  
+<% if @user.ratings.any? %>
+    <p>Favorite beer: <%= @user.favorite_beer %> </p>
+    <p>Favorite brewery: <%= @user.favorite_brewery.name %> </p>
+    <p>Preferred style: <%= @user.favorite_style %> </p>
+<% end %>
 
 <h3>ratings</h3>
 <ul>

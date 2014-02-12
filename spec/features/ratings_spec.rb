@@ -25,14 +25,37 @@ describe "Rating" do
 		expect(beer1.average_rating).to eq(15.0)
 	end
 
-	it "when deleted, is destroyed" do
-		rating = FactoryGirl.create(:rating, beer:beer1, user:user)
-		
-		visit user_path(user)
-		
-		expect{
-			click_link "delete"
-		}.to change{Rating.count}.from(1).to(0)
-	end
+	describe "when many exists" do
+    before :each do
+      user2 = FactoryGirl.create(:user, username:'Arto')
 
+      FactoryGirl.create(:rating, score:10, beer:beer1, user:user)
+      FactoryGirl.create(:rating, score:20, beer:beer1, user:user2)
+      FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
+    end
+
+    it "all are listed at the ratings page" do
+      visit ratings_path
+      expect(page).to have_content 'Number of ratings: 3'
+      expect(page).to have_content "#{beer1.name} 10"
+      expect(page).to have_content "#{beer1.name} 20"
+      expect(page).to have_content "#{beer2.name} 30"
+    end
+
+    it "only users own are shown at users page" do
+      visit user_path(user)
+      expect(page).to have_content 'Has made 2 ratings'
+      expect(page).to have_content "#{beer1.name} 10"
+      expect(page).to have_content "#{beer2.name} 30"
+      expect(page).not_to have_content "#{beer1.name} 20"
+    end
+
+    it "user can delete one of his own" do
+      visit user_path(user)
+
+      expect{
+        page.first('a', text:'delete').click
+      }.to change{Rating.count}.by(-1)
+  	end
+	end
 end
