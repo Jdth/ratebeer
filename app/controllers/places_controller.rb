@@ -10,4 +10,11 @@ class PlacesController < ApplicationController
 			render :index
 		end
 	end
+
+	def show
+		@place = BeermappingApi.location(params[:id])
+		if @place.name == "No locations Found"
+			redirect_to places_path, notice: "Place could not be found"
+		end
+  end
 end

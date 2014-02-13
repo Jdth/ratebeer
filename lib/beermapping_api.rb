@@ -20,6 +20,13 @@ class BeermappingApi
 			set << Place.new(place)
     end
   end
+	
+	def self.location(place_id)
+		url = "http://beermapping.com/webservice/locquery/#{key}/#{place_id}"
+		response = HTTParty.get "#{url}"
+		location = response.parsed_response["bmp_locations"]["location"]
+		Place.new(location)	
+	end
 
   def self.key
   	Settings.beermapping_apikey

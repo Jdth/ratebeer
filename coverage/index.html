@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-13T18:45:26+02:00">2014-02-13T18:45:26+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-14T00:37:31+02:00">2014-02-14T00:37:31+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">84.29%</span></span>
+    (<span class="covered_percent"><span class="yellow">83.28%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.82
+         1.79
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>643</b> relevant lines. 
-    <span class="green"><b>542</b> lines covered</span> and
-    <span class="red"><b>101</b> lines missed </span>
+    <b>652</b> relevant lines. 
+    <span class="green"><b>543</b> lines covered</span> and
+    <span class="red"><b>109</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#52820776c3241dc927465a0600fe43ea5f4d2b6b" class="src_link" title="app/controllers/places_controller.rb">app/controllers/places_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.7</td>
+        <td class="red strong">72.73 %</td>
+        <td>20</td>
+        <td>11</td>
+        <td>8</td>
+        <td>3</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -252,12 +252,12 @@
       
       <tr>
         <td class="strong"><a href="#2e6ea7cfb4df79bbadb377b89d613225e179105b" class="src_link" title="app/models/place.rb">app/models/place.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">80.0 %</td>
         <td>9</td>
         <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.8</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -412,12 +412,12 @@
       
       <tr>
         <td class="strong"><a href="#899f14fcd2d2b85d1bf7d2ce55e0b7792889d15b" class="src_link" title="lib/beermapping_api.rb">lib/beermapping_api.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>28</td>
-        <td>15</td>
-        <td>15</td>
-        <td>0</td>
-        <td>4.2</td>
+        <td class="red strong">80.0 %</td>
+        <td>35</td>
+        <td>20</td>
+        <td>16</td>
+        <td>4</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -2639,11 +2639,11 @@
         <div class="source_table" id="52820776c3241dc927465a0600fe43ea5f4d2b6b">
   <div class="header">
     <h3>app/controllers/places_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">72.73 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -2723,6 +2723,48 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def show</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">		@place = BeermappingApi.location(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">		if @place.name == &quot;No locations Found&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">			redirect_to places_path, notice: &quot;Place could not be found&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
@@ -4163,11 +4205,11 @@
         <div class="source_table" id="2e6ea7cfb4df79bbadb377b89d613225e179105b">
   <div class="header">
     <h3>app/models/place.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
       <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -4210,8 +4252,8 @@
           <code class="ruby">	def self.rendered_fields</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="7">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">		[:id, :name, :status, :street, :city, :zip, :country, :overall ]</code>
         </li>
@@ -5821,7 +5863,7 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">	get &#39;places&#39;, to: &#39;places#index&#39;</code>
+          <code class="ruby">	resources :places, only:[:index, :show]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -6191,11 +6233,11 @@
         <div class="source_table" id="899f14fcd2d2b85d1bf7d2ce55e0b7792889d15b">
   <div class="header">
     <h3>lib/beermapping_api.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>20</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -6316,8 +6358,8 @@
           <code class="ruby">   	places.inject([]) do | set, place |</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="20">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="20">
+          <span class="hits">5</span>
           
           <code class="ruby">			set &lt;&lt; Place.new(place)</code>
         </li>
@@ -6337,34 +6379,76 @@
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">	</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.key</code>
+          <code class="ruby">	def self.location(place_id)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="25">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
           
-          <code class="ruby">  	Settings.beermapping_apikey</code>
+          
+          <code class="ruby">		url = &quot;http://beermapping.com/webservice/locquery/#{key}/#{place_id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">		response = HTTParty.get &quot;#{url}&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">		location = response.parsed_response[&quot;bmp_locations&quot;][&quot;location&quot;]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">		Place.new(location)	</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.key</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="32">
+          <span class="hits">5</span>
+          
+          <code class="ruby">  	Settings.beermapping_apikey</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
@@ -6895,7 +6979,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">		BeermappingApi.stub(:places_in).with(&quot;kumpula&quot;).and_return([ Place.new(:name =&gt; &quot;Oljenkorsi&quot;)])</code>
+          <code class="ruby">		BeermappingApi.stub(:places_in).with(&quot;kumpula&quot;).and_return([ Place.new(:id =&gt; 1, :name =&gt; &quot;Oljenkorsi&quot;)])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -6955,7 +7039,7 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">		BeermappingApi.stub(:places_in).with(&quot;helsinki&quot;).and_return([ Place.new(:name =&gt; &quot;Oljenkorsi&quot;), Place.new(:name =&gt; &quot;Kaisla&quot;) ])</code>
+          <code class="ruby">		BeermappingApi.stub(:places_in).with(&quot;helsinki&quot;).and_return([ Place.new(:id =&gt; 1, :name =&gt; &quot;Oljenkorsi&quot;), Place.new(:id =&gt; 2,:name =&gt; &quot;Kaisla&quot;) ])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
