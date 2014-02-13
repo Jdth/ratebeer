@@ -1224,19 +1224,8 @@
         null,
         null
       ],
-      "/home/jode/RailsProjects/newapp/app/controllers/places_controller.rb": [
+      "/home/jode/RailsProjects/newapp/app/models/settings.rb": [
         1,
-        1,
-        null,
-        null,
-        1,
-        3,
-        3,
-        1,
-        null,
-        2,
-        null,
-        null,
         null
       ],
       "/home/jode/RailsProjects/newapp/app/models/place.rb": [
@@ -1247,38 +1236,6 @@
         null,
         1,
         5,
-        null,
-        null
-      ],
-      "/home/jode/RailsProjects/newapp/app/controllers/ratings_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        0,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null
       ],
@@ -1368,6 +1325,53 @@
         null,
         null
       ],
+      "/home/jode/RailsProjects/newapp/app/controllers/places_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        3,
+        3,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/home/jode/RailsProjects/newapp/app/controllers/ratings_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/home/jode/RailsProjects/newapp/app/controllers/breweries_controller.rb": [
         1,
         1,
@@ -1448,6 +1452,6 @@
         null
       ]
     },
-    "timestamp": 1392308658
+    "timestamp": 1392309926
   }
 }
