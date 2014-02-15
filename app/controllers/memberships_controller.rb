@@ -28,7 +28,7 @@ class MembershipsController < ApplicationController
     @membership = Membership.new(membership_params.merge({ user: current_user }))
 		if @membership.save
 			current_user.memberships << @membership
-			redirect_to user_path current_user
+			redirect_to @membership.beer_club, notice: "#{@membership.user.username}, welcome to the club!"
 		else
 			@beer_clubs = beer_clubs_without_current_user_as_member
 			render :new
