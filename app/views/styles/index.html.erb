@@ -1,0 +1,18 @@
+<h2>Listing styles</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+<tbody>
+	<% @styles.each do |style| %>
+		<tr>
+ 			<td><%= link_to style.name, style %></td>
+		</tr>
+	<% end %>
+</tbody>
+</table>
+
+

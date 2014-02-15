@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "Beer" do
 	let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
+	let!(:style) { FactoryGirl.create :style, name:"Lager" }
 
 	before :each do
 		FactoryGirl.create :user
