@@ -9,5 +9,5 @@
 <% if current_user.nil?%>
 	Sign in to rate beers.
 <% else %>
-	<%= link_to 'New Rating', new_rating_path %>
+	<%= link_to 'New Rating', new_rating_path, class: 'btn btn-primary' %>
 <% end %>
