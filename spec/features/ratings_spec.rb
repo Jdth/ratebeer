@@ -34,9 +34,9 @@ describe "Rating" do
       FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
     end
 
-    it "all are listed at the ratings page" do
+    it "are listed in recent ratings" do
       visit ratings_path
-      expect(page).to have_content 'Number of ratings: 3'
+      expect(page).to have_content 'Rating statistics'
       expect(page).to have_content "#{beer1.name} 10"
       expect(page).to have_content "#{beer1.name} 20"
       expect(page).to have_content "#{beer2.name} 30"
