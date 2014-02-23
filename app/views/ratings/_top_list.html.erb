@@ -1,0 +1,17 @@
+<table class="table table-hover">
+<thead>
+		<tr>
+			<th></th>	
+			<th>average</th>
+		</tr>
+	</thead>
+	<tbody>
+  	<% collection.each do |i| %>
+			<tr>
+    		<td> <%= i.name %> </td>
+				<td> <%= i.average_rating %>  </td>
+			</tr>
+  	<% end %>
+	</tbody>
+</table>
+

@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
 	validates :password, format: { with: /[0-9]/,
 		message: "must include at least one number" }
 
+	def self.most_active(n)
+		sorted_by_amount_of_ratings = User.all.sort_by{ |u| -u.ratings.count }
+		sorted_by_amount_of_ratings.first(n)
+	end
+
 	def favorite_beer
 		return nil if ratings.empty?
 		ratings.order(score: :desc).limit(1).first.beer
