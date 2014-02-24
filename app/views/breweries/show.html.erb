@@ -25,7 +25,7 @@
 		No ratings available
 	<% else %>
 		Has <%= pluralize(@brewery.ratings.count, 'rating') %>,
-		average <%= @brewery.average_rating %>
+		average <%= round(@brewery.average_rating) %>
 	<% end %>
 </p>
 

@@ -9,7 +9,7 @@
   	<% collection.each do |i| %>
 			<tr>
     		<td> <%= i.name %> </td>
-				<td> <%= i.average_rating %>  </td>
+				<td> <%= round(i.average_rating) %>  </td>
 			</tr>
   	<% end %>
 	</tbody>

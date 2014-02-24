@@ -6,7 +6,7 @@
 	Has not rated beers.
 <% else%>
 	<p>Has made <%= pluralize(@user.ratings.count, 'rating') %>,
- 	average <%= @user.average_rating %> </p>
+ 	average <%= round(@user.average_rating) %> </p>
 <% end %>
 
 <% if @user.beer_clubs.empty? %>

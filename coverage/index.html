@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-23T20:36:15+02:00">2014-02-23T20:36:15+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-24T08:51:52+02:00">2014-02-24T08:51:52+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.91
+         1.88
        </span>
     </span> hits/line)
   </h2>
@@ -427,7 +427,7 @@
         <td>20</td>
         <td>16</td>
         <td>4</td>
-        <td>3.4</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -6662,8 +6662,8 @@
           <code class="ruby">		city = city.downcase</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="5">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="5">
+          <span class="hits">12</span>
           
           <code class="ruby">		Rails.cache.fetch(city, :expires_in =&gt; 1.week) { fetch_places_in(city) }</code>
         </li>
@@ -6698,8 +6698,8 @@
           <code class="ruby">	def self.fetch_places_in(city)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="11">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
           <code class="ruby">    url = &quot;http://beermapping.com/webservice/loccity/#{key}/&quot;</code>
         </li>
@@ -6710,14 +6710,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
           
           <code class="ruby">   	response = HTTParty.get &quot;#{url}#{ERB::Util.url_encode(city)}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="14">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">   	places = response.parsed_response[&quot;bmp_locations&quot;][&quot;location&quot;]</code>
         </li>
@@ -6728,8 +6728,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
           <code class="ruby">   	return [] if places.is_a?(Hash) and places[&#39;id&#39;].nil?</code>
         </li>
@@ -6740,20 +6740,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="18">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
           
           <code class="ruby">   	places = [places] if places.is_a?(Hash)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="19">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="19">
+          <span class="hits">2</span>
           
           <code class="ruby">   	places.inject([]) do | set, place |</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="20">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="3" data-linenumber="20">
+          <span class="hits">3</span>
           
           <code class="ruby">			set &lt;&lt; Place.new(place)</code>
         </li>
@@ -6824,8 +6824,8 @@
           <code class="ruby">  def self.key</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="32">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="32">
+          <span class="hits">3</span>
           
           <code class="ruby">  	Settings.beermapping_apikey</code>
         </li>
