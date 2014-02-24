@@ -61,6 +61,8 @@ group :development do
 	gem 'rails_layout'
 end
 
+gem 'rack-mini-profiler'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
